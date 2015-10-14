@@ -14,7 +14,8 @@ arr=[{
   "body": "{\"relativeCreated\": 36.53407096862793, \"process\": 5681, \"module\": \"logtest\"}"
  }
 ]
+headers = {'Content-type':'application/json'}
 
 for i in range(100):
-    r=requests.post(url, data=json.dumps(arr))
+    r=requests.post(url, data=json.dumps(arr), headers=headers)
 
