@@ -1,4 +1,4 @@
-package edu.uchicago.costparser;
+package edu.uchicago.pandalog.parser;
 
 import java.io.BufferedReader;
 import java.lang.reflect.Type;
@@ -30,8 +30,7 @@ import com.google.gson.reflect.TypeToken;
 public class Parser implements HTTPSourceHandler {
 	private static final Logger LOG = LoggerFactory.getLogger(Parser.class);
 
-	private final Type listType = new TypeToken<List<JSONEvent>>() {
-	}.getType();
+	private final Type listType = new TypeToken<List<JSONEvent>>() {}.getType();
 	private final Gson gson;
 
 	// private means that only Builder can build me.
