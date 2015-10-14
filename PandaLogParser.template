@@ -1,7 +1,7 @@
 curl -XDELETE aianalytics01.cern.ch:9200/_template/panda_logs
 curl -XDELETE 'aianalytics01.cern.ch:9200/panda_logs*'
 
-curl -XPOST 'cl-analytics.mwt2.org:9200/_template/panda_logs' -d '{
+curl -XPOST 'aianalytics01.cern.ch:9200/_template/panda_logs' -d '{
     "template" : "panda_logs*",
     "settings" : {
         "number_of_shards" : 5,
@@ -11,8 +11,8 @@ curl -XPOST 'cl-analytics.mwt2.org:9200/_template/panda_logs' -d '{
         "log" : {
             "_source" : { "enabled" : true },
             "properties" : {
-                "@message.src" : { "type" : "string", "index" : "not_analyzed" },
-                "@message.dest" : { "type" : "string", "index" : "not_analyzed" }
+                "@message.module" : { "type" : "string", "index" : "not_analyzed" },
+                "@message.somethingElse" : { "type" : "string", "index" : "not_analyzed" }
             }
         }
     }
